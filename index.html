@@ -652,16 +652,15 @@
             <h2 class="section-headline">Productos</h2>
         </div>
 
-        <div class="filter-tabs">
-            <button class="filter-item active">Todos</button>
-            <button class="filter-item">Remeras Oversize</button>
-            <button class="filter-item">Pantalones</button>
-        </div>
-
+       <div class="filter-tabs">
+    <button id="btn-todos" class="filter-item active">Todos</button>
+    <button id="btn-remeras" class="filter-item">Remeras Oversize</button>
+    <button id="btn-pantalones" class="filter-item">Pantalones</button>
+</div>
         <div class="products-container-grid">
             
             <!-- Producto 1: Remeras Victimizer -->
-            <div class="apparel-card">
+            <div class="apparel-card remera">
                 <div class="image-container-frame">
                     <span class="card-badge-top">Nueva Colección</span>
                     <img src="48183.jpg" alt="Remera Victimizer Oversize">
@@ -679,7 +678,7 @@
             </div>
 
             <!-- Producto 2: Remeras Moon -->
-            <div class="apparel-card">
+            <div class="apparel-card remera">
                 <div class="image-container-frame">
                     <span class="card-badge-top">Más Vendido</span>
                     <img src="48186.jpg" alt="Remera Moon Earth Oversize">
@@ -697,7 +696,7 @@
             </div>
 
             <!-- Producto 3: Remeras Venomous -->
-            <div class="apparel-card">
+            <div class="apparel-card remera">
                 <div class="image-container-frame">
                     <img src="48189.jpg" alt="Remera Venomous Snake">
                 </div>
@@ -714,7 +713,7 @@
             </div>
 
             <!-- Producto 4: Pantalones Cargo Jean con roturas -->
-            <div class="apparel-card">
+            <div class="apparel-card pantalon">
                 <div class="image-container-frame">
                     <span class="card-badge-top">Premium Street</span>
                     <img src="48193.jpg" alt="Pantalón Cargo Nevada">
@@ -790,7 +789,34 @@
     <a href="https://wa.me/5493704387787?text=Hola!%20Quiero%20consultar%20por%20las%20prendas%20de%20la%20web." class="whatsapp-sticky-icon" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
+<script>
+const botones = document.querySelectorAll('.filter-item');
+const productos = document.querySelectorAll('.apparel-card');
 
+function activarBoton(botonActivo) {
+  botones.forEach(btn => btn.classList.remove('active'));
+  botonActivo.classList.add('active');
+}
+
+document.getElementById('btn-todos').onclick = () => {
+  activarBoton(document.getElementById('btn-todos'));
+  productos.forEach(p => p.style.display = 'flex');
+};
+
+document.getElementById('btn-remeras').onclick = () => {
+  activarBoton(document.getElementById('btn-remeras'));
+  productos.forEach(p => {
+    p.style.display = p.classList.contains('remera') ? 'flex' : 'none';
+  });
+};
+
+document.getElementById('btn-pantalones').onclick = () => {
+  activarBoton(document.getElementById('btn-pantalones'));
+  productos.forEach(p => {
+    p.style.display = p.classList.contains('pantalon') ? 'flex' : 'none';
+  });
+};
+</script>
 </body>
 </html>
 
