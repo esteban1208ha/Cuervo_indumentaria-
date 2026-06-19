@@ -837,6 +837,13 @@ document.getElementById('btn-pantalones').onclick = () => {
     p.style.display = p.classList.contains('pantalon') ? 'flex' : 'none';
   });
 };
+document.getElementById('btn-zapatillas').onclick = () => {
+    activarBoton(document.getElementById('btn-zapatillas'));
+    productos.forEach(p => {
+        p.style.display = p.classList.contains('zapatilla') ? 'flex' : 'none';
+    });
+};
+
 </script>
 </body>
 </html>
