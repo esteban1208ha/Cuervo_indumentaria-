@@ -863,6 +863,27 @@ document.getElementById('btn-zapatillas').onclick = () => {
     });
 };
 
+const whatsappBtn = document.querySelector('.whatsapp-sticky-icon');
+
+let isDragging = false;
+
+whatsappBtn.addEventListener('touchstart', () => {
+    isDragging = true;
+});
+
+document.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+
+    whatsappBtn.style.position = 'fixed';
+    whatsappBtn.style.left = (e.touches[0].clientX - 30) + 'px';
+    whatsappBtn.style.top = (e.touches[0].clientY - 30) + 'px';
+    whatsappBtn.style.right = 'auto';
+    whatsappBtn.style.bottom = 'auto';
+});
+
+document.addEventListener('touchend', () => {
+    isDragging = false;
+});
 </script>
 </body>
 </html>
