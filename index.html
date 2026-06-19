@@ -326,9 +326,9 @@
         .products-container-grid {
             max-width: 1300px;
             margin: 0 auto;
-            display: flex;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 450px));
-            gap: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         /* Tarjeta idéntica a la imagen de referencia */
@@ -599,7 +599,20 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap:20px;
 }
-    </style>
+    html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+.hero-right-hoodie {
+    width: 100%;
+    max-width: 500px;
+}.
+</style>        
 </head>
 <body class="grunge-overlay">
 
